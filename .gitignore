@@ -16,3 +16,7 @@ index/embeddings/
 
 # OS
 .DS_Store
+
+# generated build artifacts
+index/store/
+data/normalized/
