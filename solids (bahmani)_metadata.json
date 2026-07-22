@@ -20,7 +20,7 @@
       },
       "Producer": "pdfTeX-1.40.25",
       "Subject": "",
-      "Title": "",
+      "Title": "A review on data-driven constitutive laws for solids",
       "Trapped": {
         "name": "False"
       }
@@ -29,9 +29,9 @@
     "arxiv": "2405.03658v1",
     "pmid": null,
     "isbn": null,
-    "title": "A REVIEW ON DATA - DRIVEN CONSTITUTIVE LAWS FOR SOLIDS A P REPRINT Jan Niklas Fuhg Department of Aerospace Engineering and Engineering Mechanics The University of Texas at Austin, Texas, USA Govinda Anantha Padmanabha & Nikolaos Bouklas Sibley School of Mechanical and Aerospace Engineering Cornell University, New York, USA Bahador Bahmani & WaiChing Sun Department of Civil Engineering and Engineering Mechanics Columbia University, New York, USA Nikolaos N. Vlassis Department of Mechanical and Aerospace Engineering Rutgers University, New Jersey, USA Moritz Flaschel, Pietro Carrara & Laura De Lorenzis Department of Mechanical and Process Engineering ETH Z¨ urich, Z¨ urich, Switzerland May 7, 2024 A BSTRACT This review article highlights state-of-the-art data-driven techniques to discover, encode, surrogate, or emulate constitutive laws that describe the path-independent and path-dependent response of solids. Our objective is to provide an organized taxonomy to a large spectrum of methodologies developed in the past decades and to discuss the benefits and drawbacks of the various techniques for interpreting and forecasting mechanics behavior across different scales. Distinguishing between machine-learning-based and model-free methods, we further categorize approaches based on their interpretability and on their learning process/type of required data, while discussing the key problems of generalization and trustworthiness. We attempt to provide a road map of how these can be reconciled in a data-availability-aware context. We also touch upon relevant aspects such as data sampling techniques, design of experiment, verification, and validation. Keywords Machine Learning · Artificial Intelligence · Data-Driven Constitutive Models 1 Introduction Problems in solid mechanics are formulated in terms of three sets of equations: the first encodes basic conservation principles (e.g., balance of linear momentum) and governs the equilibrium of deformable bodies following the definition of a stress tensor; the second describes the kinematics of motion in terms of displacements, strains and strain rates. The third set, denoted as constitutive law (CL) (or material model ), describes the response of a material to external stimuli by establishing a relation between kinematic and static quantities (e.g., between strains and stresses) eventually mediated though other measurable and/or internal (i.e., non-measurable) field variables, whose evolution laws are part arXiv:2405.03658v1 [cs.CE] 6 May 2024",
+    "title": "A review on data-driven constitutive laws for solids",
     "authors": [],
-    "abstract": null,
+    "abstract": "This review article highlights state-of-the-art data-driven techniques to discover, encode, surrogate, or emulate constitutive laws that describe the path-independent and path-dependent response of solids. Our objective is to provide an organized taxonomy to a large spectrum of methodologies developed in the past decades and to discuss the benefits and drawbacks of the various techniques for interpreting and forecasting mechanics behavior across different scales. Distinguishing between machine-learning-based and model-free methods, we further categorize approaches based on their interpretability and on their learning process/type of required data, while discussing the key problems of generalization and trustworthiness. We attempt to provide a road map of how these can be reconciled in a data-availability-aware context. We also touch upon relevant aspects such as data sampling techniques, design of experiments, verification, and validation.",
     "year": "2024",
     "keywords": [],
     "pageCount": 57

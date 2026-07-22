@@ -10,7 +10,7 @@
       "IsXFAPresent": false,
       "IsCollectionPresent": false,
       "IsSignaturesPresent": false,
-      "Author": "",
+      "Author": "Martin Zlatić, Felipe Rocha, Laurent Stainier, Marko Čanađija",
       "CreationDate": "D:20240923003322Z",
       "Creator": "LaTeX with hyperref",
       "Keywords": "",
@@ -20,7 +20,7 @@
       },
       "Producer": "pdfTeX-1.40.25",
       "Subject": "",
-      "Title": "",
+      "Title": "Data-driven methods for computational mechanics: A fair comparison between neural networks based and model-free approaches",
       "Trapped": {
         "name": "False"
       }
@@ -30,7 +30,7 @@
     "pmid": null,
     "isbn": null,
     "title": "Data-driven methods for computational mechanics: A fair comparison between neural networks and model-free ap- proaches Preprint of the article published in Computer Methods in Applied Mechanics and Engineering (2024) Martin Zlatić, Felipe Rocha, Laurent Stainier, Marko Čanađija https://doi.org/10.1016/j.cma.2024.117289 c ⃝ 2024. This manuscript version is made available under the CC-BY- NC-ND 4.0 license http://creativecommons.org/licenses/by-nc-nd/4.0/ arXiv:2409.06727v2 [cs.CE] 20 Sep 2024",
-    "authors": [],
+    "authors": "Martin Zlatić, Felipe Rocha, Laurent Stainier, Marko Čanađija",
     "abstract": "We present a comparison between two approaches to modelling hyperelastic material behaviour using data. The first approach is a novel approach based on Data-driven Computational Mechanics (DDCM) that completely bypasses the definition of a material model by using only data from simulations or real-life experiments to perform computations. The second is a neural network (NN) based approach, where a neural network is used as a constitutive model. It is trained on data to learn the underlying mater",
     "year": "2024",
     "keywords": [],

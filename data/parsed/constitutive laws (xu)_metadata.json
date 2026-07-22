@@ -10,7 +10,7 @@
       "IsXFAPresent": false,
       "IsCollectionPresent": false,
       "IsSignaturesPresent": false,
-      "Author": "Hao Xu",
+      "Author": "Hao Xu, Yuntian Chen, Dongxiao Zhang",
       "Creator": "Microsoft® Word for Microsoft 365",
       "CreationDate": "D:20251113105551+08'00'",
       "ModDate": "D:20251113105551+08'00'",
@@ -20,13 +20,11 @@
     "arxiv": null,
     "pmid": null,
     "isbn": null,
-    "title": "1 Beyond empirical models: Discovering new constitutive laws in solids with graph - based equation discovery Hao Xu 1,2 , Yuntian Chen 1, 3 ,* , and Dongxiao Zhang 1, 4 ,* 1 Zhejiang Key Laboratory of Industrial Intelligence and Digital Twin, Eastern Institute of Technology, Ningbo, Zhejiang 315200, China 2 Department of Electrical Engineering, Tsinghua University, Beijing 100084, P. R. China. 3 Ningbo Institute of Digital Twin, Eastern Institute of Technology , Ningbo, Zhejiang 315200, P. R. China 4 Institute for Advanced Study, Lingnan University, Tuen Mun, Hong Kong * Corresponding authors. Email address: ychen@ eitech.edu .cn (Y. Chen); dzhang@eitech.edu.cn (D. Zhang).",
+    "title": "Beyond empirical models: Discovering new constitutive laws in solids with graph-based equation discovery",
     "authors": [
       "Hao Xu",
       "Yuntian Chen",
-      "Dongxiao Zhang",
-      "Zhejiang Key",
-      "Industrial Intelligence"
+      "Dongxiao Zhang"
     ],
     "abstract": null,
     "year": null,

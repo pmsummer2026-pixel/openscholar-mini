@@ -25,14 +25,13 @@
     "isbn": null,
     "title": "Efficient Data Structures for Model-free Data-Driven Computational Mechanics",
     "authors": [
-      "Efficient Data",
-      "Driven Computational",
-      "Mechanics Robert",
+      "Robert Eggersmann",
       "Laurent Stainier",
-      "Michael Ortiz"
+      "Michael Ortiz",
+      "Stefanie Reese"
     ],
-    "abstract": "The data-driven computing paradigm initially introduced by Kirchdoerfer & Or- tiz [1] enables finite element computations in solid mechanics to be performed directly from material data sets, without an explicit material model. From a computational effort point of view, the most challenging task is the projection of admissible states at material points onto their closest states in the material data set. In this study, we compare and develop several possible data struc- tures for solving the neare",
-    "year": "2012",
+    "abstract": "The data-driven computing paradigm initially introduced by Kirchdoerfer and Ortiz (2016) enables finite element computations in solid mechanics to be performed directly from material data sets, without an explicit material model. From a computational effort point of view, the most challenging task is the projection of admissible states at material points onto their closest states in the material data set. In this study, we compare and develop several possible data structures for solving the nearest-neighbor problem. We show that approximate nearest-neighbor (ANN) algorithms can accelerate material data searches by several orders of magnitude relative to exact searching algorithms. The approximations are suggested by--and adapted to--the structure of the data-driven iterative solver and result in no significant loss of solution accuracy. We assess the performance of the ANN algorithm with respect to material data set size with the aid of a 3D elasticity test case. We show that computations on a single processor with up to one billion material data points are feasible within a few seconds execution time with a speedup of more than 106 with respect to exact k-d trees.",
+    "year": "2020",
     "keywords": [
       "data-driven computing",
       "solid mechanics",

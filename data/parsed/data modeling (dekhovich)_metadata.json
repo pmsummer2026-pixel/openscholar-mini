@@ -30,9 +30,9 @@
     "pmid": null,
     "isbn": null,
     "title": "Cooperative data-driven modeling",
-    "authors": [],
-    "abstract": null,
-    "year": "2016",
+    "authors": "Aleksandr Dekhovich, O. Taylan Turan, Jiaxiang Yi, Miguel A. Bessa",
+    "abstract": "Data-driven modeling in mechanics is evolving rapidly based on recent machine learning advances, especially on artificial neural networks. As the field matures, new data and models created by different groups become available, opening possibilities for cooperative modeling. However, artificial neural networks suffer from catastrophic forgetting, i.e. they forget how to perform an old task when trained on a new one. This hinders cooperation because adapting an existing model for a new task affects the performance on a previous task trained by someone else. The authors developed a continual learning method that addresses this issue, applying it here for the first time to solid mechanics. In particular, the method is applied to recurrent neural networks to predict history-dependent plasticity behavior, although it can be used on any other architecture (feedforward, convolutional, etc.) and to predict other phenomena. This work intends to spawn future developments on continual learning that will foster cooperative strategies among the mechanics community to solve increasingly challenging problems. We show that the chosen continual learning strategy can sequentially learn several constitutive laws without forgetting them, using less data to achieve the same error as standard (non-cooperative) training of one law per model.",
+    "year": "2022",
     "keywords": [],
     "pageCount": 19
   },
