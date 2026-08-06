@@ -85,7 +85,7 @@ def load_papers(papers_dir):
             papers.append(_normalize_raw_paper(raw, fallback_id))
     return papers
     
-    def chunk_text(text, target_words=CHUNK_WORD_TARGET, overlap_words=CHUNK_WORD_OVERLAP):
+def chunk_text(text, target_words=CHUNK_WORD_TARGET, overlap_words=CHUNK_WORD_OVERLAP):
     words = text.split()
     if not words:
         return []
