@@ -16,11 +16,16 @@ SYSTEM_INSTRUCTIONS = (
 )
 
 SELF_CHECK_INSTRUCTIONS = (
-    "Review the draft answer below against the same references. List any "
-    "sentence that lacks a citation or is not actually supported by the "
-    "cited reference, then produce a corrected final answer with the same "
-    "citation style."
-)
+    "Review the draft answer below against the same references. "
+    "Respond in exactly two sections using these exact markdown headings.\n\n"
+    "## Issues\n"
+    "List any sentence that lacks a citation or is not actually supported "
+    "by the cited reference. If there are no issues, write 'None found.'\n\n"
+    "## Revised Answer\n"
+    "Always include this section in full, using the same [i] citation style. "
+    "Write the complete corrected answer here, fixing any issues found above. "
+    "If no issues were found, copy the draft answer here unchanged."
+    )
 
 
 def format_references(chunks):
@@ -52,24 +57,27 @@ def build_selfcheck_prompt(question, chunks, draft_answer):
     )
 
 
-def call_openai(prompt, model="gpt-4o-mini", api_key_env="OPENAI_API_KEY"):
-    from openai import OpenAI
-    client = OpenAI(api_key=os.environ[api_key_env])
-    response = client.chat.completions.create(
+def call_claude(prompt, model="claude-sonnet-5", api_key_env="ANTHROPIC_API_KEY"):
+    from anthropic import Anthropic
+    client = Anthropic(api_key=os.environ[api_key_env])
+    response = client.messages.create(
         model=model,
+        max_tokens=8192,
         messages=[{"role": "user", "content": prompt}],
-        temperature=0.2,
     )
-    return response.choices[0].message.content
+    return next((b.text for b in response.content if getattr(b, "type", None) == "text"), "")
 
 
-def generate_answer(question, chunks, model="gpt-4o-mini", self_check=True):
+
+def generate_answer(question, chunks, model="claude-sonnet-5", self_check=True):
     draft_prompt = build_answer_prompt(question, chunks)
-    draft = call_openai(draft_prompt, model=model)
+    draft = call_claude(draft_prompt, model=model)
 
     if not self_check:
         return draft
 
     check_prompt = build_selfcheck_prompt(question, chunks, draft)
-    revised = call_openai(check_prompt, model=model)
+    revised = call_claude(check_prompt, model=model)
+    if "## Revised Answer" in revised:
+        return revised.split("## Revised Answer", 1)[1].lstrip(": \n#")
     return revised

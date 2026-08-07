@@ -3,12 +3,12 @@ CLI entry point: ask a question against your mini paper corpus.
 
 Usage:
     python run.py --question "How do these papers define X?" \
-        --store_dir index/store --top_k 20 --top_n 8 --model gpt-4o-mini
+        --store_dir index/store --top_k 20 --top_n 8 --model claude-sonnet-5
 
 Requires:
     - An index already built with index/build_index.py
-    - OPENAI_API_KEY set in your environment (or adapt generator.py for a
-      local/open model instead of the OpenAI API)
+    - ANTHROPIC_API_KEY set in your environment (or adapt generator.py for a
+      local/open model instead of the Claude API)
 """
 import argparse
 import json
@@ -24,7 +24,7 @@ def main():
     parser.add_argument("--top_k", type=int, default=20, help="Candidates pulled from vector search")
     parser.add_argument("--top_n", type=int, default=8, help="Passages kept after reranking")
     parser.add_argument("--max_per_paper", type=int, default=2)
-    parser.add_argument("--model", default="gpt-4o-mini")
+    parser.add_argument("--model", default="claude-sonnet-5")
     parser.add_argument("--no_rerank", action="store_true", help="Skip the cross-encoder reranker")
     parser.add_argument("--no_self_check", action="store_true", help="Skip the self-critique revision pass")
     parser.add_argument("--output_file", default=None, help="Optional path to save the result as JSON")
