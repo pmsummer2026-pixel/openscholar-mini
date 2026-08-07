@@ -32,14 +32,59 @@ CHUNK_WORD_TARGET = 220
 CHUNK_WORD_OVERLAP = 40
 
 
+def _clean_title(title, fallback):
+    """Collapse whitespace and cap overly long titles."""
+    if not title:
+        return fallback
+    title = " ".join(title.split())
+    if len(title) > 300:
+        cut = title[:300]
+        last_period = cut.rfind(". ")
+        if last_period > 50:
+            cut = cut[:last_period]
+        return cut.strip() + "..."
+    return title
+
+def _extract_full_text(raw):
+    ft = raw.get("fullText")
+    if isinstance(ft, str):
+        return ft
+    if isinstance(ft, dict):
+        return ft.get("fullText", "") or ""
+    return ""
+
+def _normalize_raw_paper(raw, fallback_id):
+    """Convert raw ingest output (nested metadata/fullText) into the
+    flat schema build_chunks() expects. Mirrors scripts/normalize_metadata.py
+    so build_index.py works directly against data/parsed."""
+    meta = raw.get("metadata", {})
+    full_text = _extract_full_text(raw)
+    sections = []
+    if full_text.strip():
+        sections.append({"heading": "Full Text", "text": full_text})
+    return {
+        "paper_id": meta.get("arxiv") or fallback_id,
+        "title": _clean_title(meta.get("title", ""), fallback_id),
+        "authors": meta.get("authors") or [],
+        "year": meta.get("year"),
+        "abstract": meta.get("abstract") or "",
+        "sections": sections,
+    }
+
 def load_papers(papers_dir):
     papers = []
     for path in sorted(Path(papers_dir).glob("*.json")):
         with open(path, "r", encoding="utf-8") as f:
-            papers.append(json.load(f))
+            raw = json.load(f)
+        if "sections" in raw and "paper_id" in raw:
+            # Already in the flat schema build_chunks() expects.
+            papers.append(raw)
+        else:
+            # Raw ingest output (nested metadata/fullText) - normalize it.
+            fallback_id = path.stem.replace("_metadata", "")
+            papers.append(_normalize_raw_paper(raw, fallback_id))
     return papers
-
-
+    
 def chunk_text(text, target_words=CHUNK_WORD_TARGET, overlap_words=CHUNK_WORD_OVERLAP):
     words = text.split()
     if not words:

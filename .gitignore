@@ -9,7 +9,6 @@ venv/
 
 # Data and index artifacts (regenerate locally, don't commit large files)
 data/*.pdf
-data/parsed/*.json
 index/*.faiss
 index/*.pkl
 index/embeddings/
